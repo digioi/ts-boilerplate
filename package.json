@@ -1,0 +1,51 @@
+{
+  "name": "jesttestaxios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "run-s clean && run-s build:*",
+    "build:main": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist/*",
+    "fix": "tslint --fix --project .",
+    "lint": "tslint --project . && prettier \"src/**/*\" --list-different",
+    "test": "npx jest --runInBand --no-cache"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+      "@types/dotenv": "^6.1.0",
+      "axios": "^0.18.0",
+      "dotenv": "^7.0.0",
+      "enzyme": "^3.9.0",
+      "enzyme-adapter-react-16": "^1.11.2",
+      "esm": "3.1.0",
+      "querystring": "^0.2.0",
+      "react": "^16.8.5",
+      "react-dom": "^16.8.5"
+  },
+  "devDependencies": {
+      "@types/jest": "^24.0.11",
+      "@types/node": "^11.10.4",
+      "jest": "^24.5.0",
+      "ts-jest": "^24.0.0",
+      "typescript": "^3.3.4000",
+      "@typescript-eslint/eslint-plugin": "^1.4.2",
+      "@typescript-eslint/parser": "^1.4.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testPathIgnorePatterns": ["/node_modules/"],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
